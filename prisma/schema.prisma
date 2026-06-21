@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  passwordHash String
+  createdAt    DateTime       @default(now())
+  sessions     Session[]
+  quietTimes   QuietTime[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model QuietTime {
+  id          String   @id @default(cuid())
+  userId      String
+  date        DateTime @default(now())
+  reference   String
+  verse       String?
+  details     String?
+  reflection  String?
+  tag         String?
+  positionX   Float    @default(0)
+  positionY   Float    @default(0)
+  rotation    Float    @default(0)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
