@@ -32,14 +32,14 @@ export default async function ArchivePage() {
         <a
           href="/calendar"
           style={{ padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#bbb", textDecoration: "none", borderLeft: "1px solid #333" }}
-          className="hover:bg-[#1a1a1a] transition-colors"
+          className="hide-mobile hover:bg-[#1a1a1a] transition-colors"
         >
           calendar
         </a>
         <a
           href="/soft/archive"
           style={{ padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#bbb", textDecoration: "none", borderLeft: "1px solid #333" }}
-          className="hover:bg-[#1a1a1a] transition-colors"
+          className="hide-mobile hover:bg-[#1a1a1a] transition-colors"
         >
           soft ↗
         </a>

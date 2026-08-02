@@ -32,8 +32,8 @@ export default async function SoftArchivePage() {
             {entries.length} {entries.length === 1 ? "session" : "sessions"}
           </span>
         </div>
-        <a href="/soft/calendar" className="s-nav-link">calendar</a>
-        <a href="/archive" className="s-nav-link">classic ↗</a>
+        <a href="/soft/calendar" className="s-nav-link hide-mobile">calendar</a>
+        <a href="/archive" className="s-nav-link hide-mobile">classic ↗</a>
         <form action={async () => { "use server"; await signOut({ redirectTo: "/soft/login" }); }} style={{ display: "contents" }}>
           <button type="submit" className="s-nav-link" style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-sans)" }}>
             sign out

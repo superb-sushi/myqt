@@ -229,7 +229,28 @@ html, body {
   .brutal-nav form button {
     padding: 0 0.6rem !important;
     font-size: 0.58rem !important;
+    letter-spacing: 0.1em !important;
   }
+
+  /* Soft nav links: tighter */
+  .s-nav-link {
+    padding: 0 0.5rem !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Stats dialog: stack date row, reduce padding */
+  .stats-date-row {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  .stats-date-row > div { flex: unset !important; }
+  .stats-date-row > button { align-self: flex-end !important; }
+  .stats-grid-2 { grid-template-columns: 1fr !important; }
+  .stats-dialog-inner { padding: 1.25rem !important; }
+
+  /* Calendar month controls: tighter */
+  .cal-month-row h2 { font-size: 1.1rem !important; }
 
   /* Soft board search bar */
   .s-input { max-width: 100% !important; }

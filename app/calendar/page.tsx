@@ -69,10 +69,10 @@ export default async function CalendarPage({
           <span className="serif" style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--black)" }}>calendar</span>
         </div>
         <div style={{ flex: 1, minWidth: 0 }} />
-        <a href="/archive" style={{ padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#bbb", textDecoration: "none", borderLeft: "1px solid #333" }} className="hover:bg-[#1a1a1a] transition-colors">
+        <a href="/archive" style={{ padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#bbb", textDecoration: "none", borderLeft: "1px solid #333" }} className="hide-mobile hover:bg-[#1a1a1a] transition-colors">
           archive
         </a>
-        <a href="/soft/calendar" style={{ padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#bbb", textDecoration: "none", borderLeft: "1px solid #333" }} className="hover:bg-[#1a1a1a] transition-colors">
+        <a href="/soft/calendar" style={{ padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#bbb", textDecoration: "none", borderLeft: "1px solid #333" }} className="hide-mobile hover:bg-[#1a1a1a] transition-colors">
           soft ↗
         </a>
         <form action={async () => { "use server"; await signOut({ redirectTo: "/login" }); }} style={{ display: "flex" }}>
@@ -83,7 +83,7 @@ export default async function CalendarPage({
       </header>
 
       <main style={{ flex: 1, maxWidth: "680px", width: "100%", margin: "0 auto", padding: "3rem 1.5rem 5rem" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
+        <div className="cal-month-row" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
           <a href={`/calendar?year=${prevYear}&month=${prevMonth}`} className="b-btn" style={{ padding: "0.4rem 0.875rem", fontSize: "0.65rem" }}>← prev</a>
           <h2 className="serif" style={{ fontSize: "1.5rem", fontWeight: 600, margin: 0 }}>{monthLabel}</h2>
           <div style={{ display: "flex", gap: "0.5rem" }}>

@@ -43,8 +43,8 @@ export default async function SoftQTPage() {
           </span>
         </div>
         <nav style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
-          <a href="/" className="s-nav-link">classic ↗</a>
-          <a href="/soft/archive" className="s-nav-link">archive</a>
+          <a href="/" className="s-nav-link hide-mobile">classic ↗</a>
+          <a href="/soft/archive" className="s-nav-link hide-mobile">archive</a>
           <a href="/soft/calendar" className="s-nav-link">calendar</a>
           <form action={async () => { "use server"; await signOut({ redirectTo: "/soft/login" }); }} style={{ display: "contents" }}>
             <button type="submit" className="s-nav-link" style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-sans)" }}>

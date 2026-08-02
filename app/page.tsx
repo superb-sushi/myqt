@@ -67,7 +67,7 @@ export default async function QTPage() {
               textDecoration: "none",
               borderRight: "1px solid #333",
             }}
-            className="hover:bg-[#1a1a1a] transition-colors"
+            className="hide-mobile hover:bg-[#1a1a1a] transition-colors"
           >
             soft ↗
           </a>
@@ -91,7 +91,7 @@ export default async function QTPage() {
               textDecoration: "none",
               borderRight: "1px solid #333",
             }}
-            className="hover:bg-[#1a1a1a] transition-colors"
+            className="hide-mobile hover:bg-[#1a1a1a] transition-colors"
           >
             archive
           </a>

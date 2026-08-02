@@ -210,7 +210,7 @@ export function MoodStatsDialog({ soft, year, month }: { soft?: boolean; year: n
             backdropFilter: soft ? "blur(4px)" : undefined,
           }}
         >
-          <div style={soft ? {
+          <div className="stats-dialog-inner" style={soft ? {
             background: "var(--s-surface-card)", border: "1px solid var(--s-border-mid)",
             borderRadius: "20px", boxShadow: "var(--s-shadow-raised)",
             width: "100%", maxWidth: "480px", maxHeight: "85vh", overflowY: "auto",
@@ -235,7 +235,7 @@ export function MoodStatsDialog({ soft, year, month }: { soft?: boolean; year: n
             </div>
 
             {/* Date range */}
-            <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-end", marginBottom: "1.25rem" }}>
+            <div className="stats-date-row" style={{ display: "flex", gap: "0.75rem", alignItems: "flex-end", marginBottom: "1.25rem" }}>
               <div style={{ flex: 1 }}>
                 <span style={labelStyle}>from</span>
                 <input type="date" value={from} onChange={(e) => setFrom(e.target.value)} style={{ ...inputStyle, width: "100%" }} />
@@ -281,7 +281,7 @@ export function MoodStatsDialog({ soft, year, month }: { soft?: boolean; year: n
                   </div>
 
                   {/* Mean + Median row */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+                  <div className="stats-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
                     {statCard(<>
                       {label("your average")}
                       <div style={{ marginTop: "0.4rem", display: "flex", alignItems: "baseline", gap: "4px" }}>

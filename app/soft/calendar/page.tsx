@@ -73,8 +73,8 @@ export default async function SoftCalendarPage({
         <div style={{ flex: 1, display: "flex", alignItems: "center", gap: "0.6rem" }}>
           <span className="serif" style={{ fontSize: "1.05rem", fontWeight: 400, color: "var(--s-text)", letterSpacing: "-0.01em" }}>calendar</span>
         </div>
-        <a href="/soft/archive" className="s-nav-link">archive</a>
-        <a href="/calendar" className="s-nav-link">classic ↗</a>
+        <a href="/soft/archive" className="s-nav-link hide-mobile">archive</a>
+        <a href="/calendar" className="s-nav-link hide-mobile">classic ↗</a>
         <form action={async () => { "use server"; await signOut({ redirectTo: "/soft/login" }); }} style={{ display: "contents" }}>
           <button type="submit" className="s-nav-link" style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-sans)" }}>
             sign out
@@ -83,7 +83,7 @@ export default async function SoftCalendarPage({
       </header>
 
       <main style={{ flex: 1, maxWidth: "680px", width: "100%", margin: "0 auto", padding: "3rem 1.5rem 5rem" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
+        <div className="cal-month-row" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
           <a href={`/soft/calendar?year=${prevYear}&month=${prevMonth}`} className="s-btn" style={{ padding: "0.4rem 0.875rem", fontSize: "0.65rem" }}>← prev</a>
           <h2 className="serif" style={{ fontSize: "1.5rem", fontWeight: 400, margin: 0, color: "var(--s-text)" }}>{monthLabel}</h2>
           <div style={{ display: "flex", gap: "0.5rem" }}>
