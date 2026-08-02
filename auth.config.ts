@@ -10,7 +10,8 @@ export const authConfig: NextAuthConfig = {
       const path = nextUrl.pathname;
       const isPublic =
         path === "/login" || path === "/register" ||
-        path === "/soft/login" || path === "/soft/register";
+        path === "/soft/login" || path === "/soft/register" ||
+        path === "/forgot-password" || path === "/reset-password";
       const isSoftPublic = path === "/soft/login" || path === "/soft/register";
 
       if (!isLoggedIn && !isPublic) return Response.redirect(new URL("/login", nextUrl));

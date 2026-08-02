@@ -72,6 +72,13 @@ export default async function QTPage() {
             soft ↗
           </a>
           <a
+            href="/calendar"
+            style={{ padding: "0 1.25rem", display: "flex", alignItems: "center", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#bbb", textDecoration: "none", borderRight: "1px solid #333" }}
+            className="hover:bg-[#1a1a1a] transition-colors"
+          >
+            calendar
+          </a>
+          <a
             href="/archive"
             style={{
               padding: "0 1.25rem",

@@ -3,7 +3,7 @@ import { login } from "@/app/actions/auth";
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ registered?: string; error?: string }>;
+  searchParams: Promise<{ registered?: string; error?: string; reset?: string }>;
 }) {
   const params = await searchParams;
 
@@ -23,6 +23,11 @@ export default async function LoginPage({
           </h1>
         </div>
 
+        {params.reset && (
+          <div className="b-box mb-6" style={{ background: "var(--cobalt)", color: "var(--white)", padding: "0.5rem 1.25rem", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase" }}>
+            ✓ password updated — please sign in
+          </div>
+        )}
         {params.registered && (
           <div className="b-box mb-6" style={{ background: "var(--cobalt)", color: "var(--white)", padding: "0.5rem 1.25rem", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase" }}>
             ✓ account created — welcome
@@ -40,7 +45,12 @@ export default async function LoginPage({
             <input name="email" type="email" required className="b-input" />
           </div>
           <div className="mb-8">
-            <label className="b-label">password</label>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.5rem" }}>
+              <label className="b-label" style={{ margin: 0 }}>password</label>
+              <a href="/forgot-password" style={{ fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#666", textDecoration: "none", borderBottom: "1px solid #999" }}>
+                forgot?
+              </a>
+            </div>
             <input name="password" type="password" required className="b-input" />
           </div>
 
